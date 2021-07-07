@@ -12,7 +12,8 @@
       "url": "https://atcoder.jp/contests/arc032/tasks/arc032_1",
       "directory": {
         "path": "a",
-        "testdir": "tests"
+        "testdir": "test",
+        "submit": "main.py"
       }
     },
     {
@@ -22,7 +23,8 @@
       "url": "https://atcoder.jp/contests/arc032/tasks/arc032_2",
       "directory": {
         "path": "b",
-        "testdir": "tests"
+        "testdir": "test",
+        "submit": "main.py"
       }
     },
     {
@@ -32,7 +34,8 @@
       "url": "https://atcoder.jp/contests/arc032/tasks/arc032_3",
       "directory": {
         "path": "c",
-        "testdir": "tests"
+        "testdir": "test",
+        "submit": "main.py"
       }
     },
     {
@@ -42,7 +45,8 @@
       "url": "https://atcoder.jp/contests/arc032/tasks/arc032_4",
       "directory": {
         "path": "d",
-        "testdir": "tests"
+        "testdir": "test",
+        "submit": "main.py"
       }
     }
   ]

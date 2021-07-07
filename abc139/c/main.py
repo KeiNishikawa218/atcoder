@@ -5,18 +5,16 @@ def main():
     h = list(map(int, input().split())) 
 
     ans = 0
+    tmp = 0
 
-    for i in range(n-1):
-        j = i
-        tmp = 0
-        while j < n-1:
-            if h[j] >= h[j+1]:
-                j += 1
-                tmp += 1
-            else:
-                break
-        ans = max(ans, tmp)
+    for i in range(1, n):
+        if h[i-1] >= h[i]:
+            tmp += 1
+        else:
+            ans = max(ans, tmp)
+            tmp = 0
 
+    ans = max(ans, tmp)
     print(ans)
 
 main()
