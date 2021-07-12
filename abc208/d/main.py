@@ -1,31 +1,28 @@
 #!/usr/bin/env python3
 
-ans = 0
-
 import sys
-sys.setrecursionlimit(10000)
 
 n, m = map(int, input().split())
-g = [[] for i in range(n)]
+abc = [list(map(int, input().split())) for _ in range(m)]
 
-for _ in range(m):
-    a, b, c = map(int, input().split())
-    g[a-1].append([b-1, c])
-
-print(g)
-
-def dfs(v):
-    global ans
-    if temp[v]: return
-    temp[v] = True
-    for vv in g[v]:
-        ans += vv[1]
-        dfs(vv[0])
+d = [[1 << 60]*n for i in range(n)]
 
 for i in range(n):
-    temp = [False]*n
+    d[i][i] = 0
 
-    dfs(i)
-    print(temp)
+for a, b, c in abc:
+    d[a-1][b-1] = c
+
+ans = 0
+
+for k in range(n):
+    nxt = [[0]*n for i in range(n)]
+    for i in range(n):
+        for j in range(n):
+            nxt[i][j] = min(d[i][j], d[i][k]+d[k][j])
+            if nxt[i][j] < 1 << 59:
+                ans += nxt[i][j]
+
+    d = nxt
 
 print(ans)
